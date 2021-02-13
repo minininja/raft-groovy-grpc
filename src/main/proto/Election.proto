@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "org.dorkmaster.raft.grpc.election";
+
+package election;
+
+service Election {
+  rpc VoteForMe (Request) returns (Status) {}
+}
+
+message Request {
+  string serverId = 1;
+}
+
+message Status {
+  string state = 1;
+}
